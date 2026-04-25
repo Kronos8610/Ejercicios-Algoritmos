@@ -44,13 +44,43 @@ java -cp bin ProblemaMochila
 
 ---
 
+## Ejercicio 3: Juguetería Concurrente (`src/Ejercicio_jugueteria/`)
+
+Simula una juguetería navideña usando **concurrencia en Java** con semáforos. Tres elfos fabrican juguetes y los depositan en una encimera (capacidad máxima 7). Los niños buenos cogen juguetes para jugar y los devuelven, mientras que los niños malos los rompen sin devolverlos. La simulación termina cuando todos los elfos han fabricado sus juguetes.
+
+| Actor | Hilos | Comportamiento |
+|---|---|---|
+| Elfo | 3 | Fabrica 10-20 juguetes y los pone en la encimera |
+| Niño Bueno | 5 | Coge un juguete, juega 2-5 s, lo devuelve |
+| Niño Malo | 20 | Coge un juguete, lo rompe; expulsado tras 3 roturas |
+
+### Requisitos
+
+- Java JDK 16 o superior 
+
+### Ejecución
+
+```bash
+cd src/Ejercicio_jugueteria
+javac *.java
+java Jugueteria
+```
+
+---
+
 ## Estructura del proyecto
 
 ```
-Entrevista/
 ├── src/
 │   ├── ComsumoDeEnergia.py
-│   └── ProblemaMochila.java
+│   ├── ProblemaMochila.java
+│   └── Ejercicio_jugueteria/
+│       ├── Jugueteria.java   (main)
+│       ├── Encimera.java
+│       ├── Juguete.java
+│       ├── Elfo.java
+│       ├── Nino_Bueno.java
+│       └── Nino_Malo.java
 ├── .vscode/
 │   └── settings.json
 └── consumo_energia.json   (generado al ejecutar el script Python)
